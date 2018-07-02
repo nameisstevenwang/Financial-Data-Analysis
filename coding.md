@@ -24,13 +24,9 @@ def get_data(df, selected_value, selected_feature):
     return select_trade
 
 
-# 以一天的数据作为实验
-path = "I:/Financial_Modeling/filedb-for-steven/filedb/kbar/2010_marge"
-#  获得了相关的路径信息在这个文件夹下所有的文件列表
-files = os.listdir(path)
-i = 1
-#  描述路径一第一个为例，将文件列表名称中的第一个导入到
+path = "I:/Financial_Modeling/filedb-for-steven/filedb/kbar/2010_marge"  # 以一天的数据作为实验
+files = os.listdir(path)   #  获得了相关的路径信息在这个文件夹下所有的文件列表
+i = 1  #  描述路径一第一个为例，将文件列表名称中的第一个导入到
 print(path+'/'+'%s' % files[i])  # 成功的路径描述
 data_i = pd.read_csv((path+'/'+'%s' % files[i]))
-
 selected_data = get_data(data_i, 'rb', 'volume')
